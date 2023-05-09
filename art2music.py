@@ -219,7 +219,7 @@ hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
-            </style>
+            </style>f
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
             
@@ -234,7 +234,7 @@ df4 = pd.DataFrame({'Harmonies': ['U0','ST','M2','m3','M3','P4','DT','P5','m6','
 st.sidebar.markdown("Select sample image if you'd like to use one of the preloaded images. Select User Image is you'd like to use your own image.")
 _radio = st.sidebar.radio("",("Use Sample Image", "Use User Image"))
 
-sample_images = glob.glob('*.png')
+sample_images = glob.glob('*.jpg')
 samp_imgs_df = pd.DataFrame(sample_images,columns=['Images'])
 samp_img = st.sidebar.selectbox('Choose a sample image', samp_imgs_df['Images'])
 
@@ -347,10 +347,10 @@ with ps1:
 if img2load is not None:
     # Saves
     img = Image.open(img2load)
-    img = img.save("img.png")
+    img = img.save("img.jpg")
     
     # OpenCv Read
-    img = cv2.imread("img.png")
+    img = cv2.imread("img.jpg")
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     #Display the image
