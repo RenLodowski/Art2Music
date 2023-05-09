@@ -211,6 +211,7 @@ def img2music(img, scale = [220.00, 246.94 ,261.63, 293.66, 329.63, 349.23, 415.
 
 
 # Adding an appropriate title for the test website
+st.image('sample3.png', width = 700)
 st.title("Making Music From Images")
 
 hide_st_style = """
