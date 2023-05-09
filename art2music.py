@@ -353,7 +353,7 @@ if img2load is not None:
         img = img.convert('RGB')
 
 # Save the image as JPEG or PNG based on the file extension
-    if img2load.format == 'PNG':
+    if img2load.type == 'png':
     # If it's a PNG, save it with no alpha channel
         img.save('img.jpg', quality=95)
     else:
