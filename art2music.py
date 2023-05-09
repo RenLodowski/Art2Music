@@ -346,12 +346,24 @@ with ps1:
 # Making the required prediction
 if img2load is not None:
     # Saves
-    img = Image.open(img2load)
-    img = img.save("img.jpg")
-    
-    # OpenCv Read
-    img = cv2.imread("img.jpg")
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+  img = Image.open(img2load)
+
+# Check if the image has an alpha channel
+if img.mode == 'RGBA':
+    # If so, convert it to RGB
+    img = img.convert('RGB')
+
+# Save the image as JPEG or PNG based on the file extension
+if img2load.lower().endswith('.png'):
+    # If it's a PNG, save it with no alpha channel
+    img.save('img.jpg', quality=95)
+else:
+    # Otherwise, save it as a JPEG
+    img.save('img.jpg', quality=95)
+
+# OpenCv Read
+img = cv2.imread('img.jpg')
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     #Display the image
     #st.image(img)
