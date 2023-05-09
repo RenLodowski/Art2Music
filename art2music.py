@@ -233,7 +233,7 @@ df4 = pd.DataFrame({'Harmonies': ['U0','ST','M2','m3','M3','P4','DT','P5','m6','
 st.sidebar.markdown("Select sample image if you'd like to use one of the preloaded images. Select User Image is you'd like to use your own image.")
 _radio = st.sidebar.radio("",("Use Sample Image", "Use User Image"))
 
-sample_images = glob.glob('*.jpg', '*.png')
+sample_images = glob.glob('*.png')
 samp_imgs_df = pd.DataFrame(sample_images,columns=['Images'])
 samp_img = st.sidebar.selectbox('Choose a sample image', samp_imgs_df['Images'])
 
