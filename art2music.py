@@ -241,9 +241,9 @@ samp_img = st.sidebar.selectbox('Choose a sample image', samp_imgs_df['Images'])
 #Load image 
 user_data = st.sidebar.file_uploader(label="Upload your own Image")
 if _radio == "Use Sample Image":
-    img2load = samp_img
+    img2load = samp_img # str
 elif _radio == "Use User Image": 
-    img2load = user_data
+    img2load = user_data.name #str
 
 #Display the image
 st.sidebar.image(img2load)    
