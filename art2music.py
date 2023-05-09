@@ -351,7 +351,7 @@ if img2load is not None:
 # Check if the image has an alpha channel
     if img.mode == 'RGBA':
     # If so, convert it to RGB
-    img = img.convert('RGB')
+        img = img.convert('RGB')
 
 # Save the image as JPEG or PNG based on the file extension
     if img2load.lower().endswith('.png'):
