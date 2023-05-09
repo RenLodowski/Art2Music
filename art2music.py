@@ -347,10 +347,10 @@ with ps1:
 if img2load is not None:
     # Saves
     img = Image.open(img2load)
-    img = img.save("img.jpg")
+    img = img.save("img.png")
     
     # OpenCv Read
-    img = cv2.imread("img.jpg")
+    img = cv2.imread("img.png")
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     #Display the image
