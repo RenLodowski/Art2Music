@@ -242,8 +242,10 @@ samp_img = st.sidebar.selectbox('Choose a sample image', samp_imgs_df['Images'])
 user_data = st.sidebar.file_uploader(label="Upload your own Image")
 if _radio == "Use Sample Image":
     img2load = samp_img # str
+    filename = samp_img
 elif _radio == "Use User Image": 
     img2load = user_data
+    filename = user_data.name
 #Display the image
 st.sidebar.image(img2load)    
 
@@ -353,7 +355,7 @@ if img2load is not None:
         img = img.convert('RGB')
 
 # Save the image as JPEG or PNG based on the file extension
-    if img2load.type == 'png':
+    if filename.endswith(".png"):
     # If it's a PNG, save it with no alpha channel
         img.save('img.jpg', quality=95)
     else:
