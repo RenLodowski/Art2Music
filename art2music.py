@@ -246,6 +246,9 @@ if _radio == "Use Sample Image":
 elif _radio == "Use User Image": 
     img2load = user_data
     filename = user_data.name
+elif filename is None:
+    st.sidebar.warning('Please upload an image or select a sample image')
+
 #Display the image
 st.sidebar.image(img2load)    
 
