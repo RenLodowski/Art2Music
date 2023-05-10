@@ -246,8 +246,13 @@ if _radio == "Use Sample Image":
 elif _radio == "Use User Image": 
     img2load = user_data
     filename = user_data.name
-elif filename is None:
-    st.sidebar.warning('Please upload an image or select a sample image')
+try:
+        img2load = user_data.read()  # read the image data if it exists
+        filename = user_data.name
+except AttributeError:
+        st.sidebar.warning('Please upload an image or select a sample image')
+        img2load = None  # set img2load to None so you can check for it later
+        filename = None
 
 #Display the image
 st.sidebar.image(img2load)    
