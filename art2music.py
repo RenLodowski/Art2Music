@@ -224,7 +224,7 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
             
 
-st.markdown("This little app converts an image into a song. Play around with the various inputs belows using different images! You can also use the sample images provided. Supports JPG and PNG files.")
+st.markdown("This little app converts an image into a song. Play around with the various inputs belows using different images! You can also use the sample images provided. :green[Supports JPG and PNG files.]")
 #Making dropdown select box containing scale, key, and octave choices
 df1 = pd.DataFrame({'Scale_Choice': ['AEOLIAN', 'BLUES', 'PHYRIGIAN', 'CHROMATIC','DORIAN','HARMONIC_MINOR','LYDIAN','MAJOR','MELODIC_MINOR','MINOR','MIXOLYDIAN','NATURAL_MINOR','PENTATONIC']})
 df2 = pd.DataFrame({'Keys': ['A','a','B','C','c','D','d','E','F','f','G','g']})
